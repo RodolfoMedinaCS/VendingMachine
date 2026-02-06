@@ -27,4 +27,12 @@ public class Slot {
     public int getQuantity(){
         return quantity;
     }
+
+    public void deductQuantity(){
+        this.quantity--;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
 }

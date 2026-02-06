@@ -16,4 +16,11 @@ public class Wallet {
         this.balance = balance;
     }
 
+    public void deductPrice(double price){
+        this.balance -= price;
+    }
+
+    public void addMoney(double cash){
+        this.balance += cash;
+    }
 }

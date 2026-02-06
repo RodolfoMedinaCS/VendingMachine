@@ -1,0 +1,26 @@
+package com.rodolfo.vendingmachine.service;
+
+import com.rodolfo.vendingmachine.model.Slot;
+
+public class VendingMachineAdmin {
+
+    private VendingMachine machine;
+    private Inventory inventory;
+
+    public VendingMachineAdmin(VendingMachine machine, Inventory inventory){
+        this.machine = machine;
+        this.inventory = inventory;
+    }
+
+    public void restock(String code, int quantity){
+        Slot slot = inventory.getSlot(code);
+        slot.setQuantity(quantity);
+    }
+
+    public void changePrice(String code, double price){
+        Slot slot = inventory.getSlot(code);
+        slot.setPrice(price);
+    }
+
+
+}

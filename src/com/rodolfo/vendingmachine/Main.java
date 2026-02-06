@@ -12,7 +12,7 @@ public class Main{
         //Creating Product
         Product product1 = new Product("Coca Cola");
 
-        Slot Item1 = new Slot("A1", product1, 10, 2.00);
+        Slot Item1 = new Slot("A1", product1, 10, 5.00);
 
         Inventory inventory1 = new Inventory();
 
@@ -20,13 +20,29 @@ public class Main{
 
         Wallet wallet = new Wallet(4.00);
 
-        VendingMachine machine = new VendingMachine(inventory1, wallet);
+        VendingMachine machine = new VendingMachine(inventory1);
 
-        machine.buyProduct("A1");
+        //insert money
+        machine.insertMoney(wallet);
+
+         if(machine.buyProduct("A1")){
+             System.out.println("\nProduct purchased successfully");
+         }else {
+             System.out.println("\nInsufficient funds");
+         }
+
+         System.out.println("Adding Money to wallet...");
+         wallet.addMoney(2.00);
 
 
-        System.out.println("This is the balance after purchasing");
-        System.out.println(wallet.getBalance());
+        if(machine.buyProduct("A1")){
+            System.out.println("\nProduct purchased successfully");
+        }else {
+            System.out.println("\nInsufficient funds");
+        }
+
+
+        System.out.println("This is the balance after purchasing: $" + wallet.getBalance());
 
 
 
