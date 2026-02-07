@@ -17,6 +17,7 @@ public class VendingMachineAdmin {
     }
     public VendingMachineAdmin(VendingMachine machine){
         this.machine = machine;
+        this.inventory = new Inventory();
     }
 
     public void restock(String code, int quantity){
@@ -33,7 +34,8 @@ public class VendingMachineAdmin {
         for(char row = 'A'; row < 'A' + ROWS; row++){
             for(int col = 1; col <= COLS; col++){
                 String code = row + String.valueOf(col);
-                inventory.addSlot(null, code);
+                Slot slot = new Slot();
+                machine.getInventory().addSlot(slot, code);
             }
         }
     }
@@ -41,7 +43,7 @@ public class VendingMachineAdmin {
     public void stockSlot(String productName, int qnty, double cost, String code){
         Product product = new Product(productName);
         Slot slot =  new Slot(product, qnty, cost);
-        inventory.addSlot(slot,code);
+        machine.getInventory().addSlot(slot,code);
     }
 
 

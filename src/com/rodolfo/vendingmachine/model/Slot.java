@@ -15,6 +15,13 @@ public class Slot {
         this.price = price;
     }
 
+    public Slot(){
+        Product product = new Product("");
+        this.product = product;
+        this.quantity = 0;
+        this.price = 0.0;
+    }
+
     public double getPrice(){
         return price;
     }

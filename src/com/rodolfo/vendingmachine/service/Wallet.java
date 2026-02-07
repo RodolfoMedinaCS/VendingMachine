@@ -4,8 +4,8 @@ public class Wallet {
 
     private double balance;
 
-    public Wallet(double balance) {
-        this.balance = balance;
+    public Wallet(){
+        this.balance = 0.0;
     }
 
     public double getBalance(){
