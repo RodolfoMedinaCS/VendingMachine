@@ -2,14 +2,14 @@ package com.rodolfo.vendingmachine.model;
 
 public class Slot {
 
-    public String code;
+
     private Product product;
     private int quantity;
     private double price;
 
 
-    public Slot(String code, Product product, int quantity, double price) {
-        this.code = code;
+    public Slot(Product product, int quantity, double price) {
+
         this.product = product;
         this.quantity = quantity;
         this.price = price;

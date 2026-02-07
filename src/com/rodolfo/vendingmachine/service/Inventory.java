@@ -8,6 +8,10 @@ public class Inventory {
 
     HashMap<String, Slot> slots = new HashMap<>();
 
+    public void Inventory(){
+
+    }
+
     public void addSlot(Slot slot, String code){
         slots.put(code, slot);
     }
@@ -15,6 +19,7 @@ public class Inventory {
     public Slot getSlot(String code){
         return slots.get(code);
     }
+
 
 
 
